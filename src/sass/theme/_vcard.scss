@@ -1,0 +1,15 @@
+.vcard-section {
+
+	p {
+		font-weight: $font-weight-bold;
+	}
+
+	#qr_vcard {
+		margin-bottom: $spacer;
+
+        img {
+            border-radius: 1rem;
+        }
+	}
+
+}

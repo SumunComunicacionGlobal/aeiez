@@ -1,0 +1,113 @@
+.single-circular {
+
+    #main {
+        background-color: $white;
+        padding: $spacer * 2 $spacer;
+        border-radius: $border-radius-lg;
+        box-shadow: $box-shadow;
+        border-bottom: $spacer*2 solid $primary;
+
+        @include media-breakpoint-up(md) {
+            padding: $spacer*2 $spacer*2;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-left: $spacer*4;
+            padding-right: calc(240px + $spacer*4);
+            background-image: url('../img/fondo-circular.svg');
+            background-repeat: no-repeat;
+            background-size: 240px auto;
+            background-position: right top;    
+
+            .circular-content-wrapper {
+                min-height: 420px;
+            }
+        }
+
+        > article > .entry-content {
+            margin-bottom: $spacer * 4;
+            max-width: 800px;
+            margin: $spacer auto $spacer * 4;
+
+            h1, h2, h3, h4, h5, h6 {
+                margin-top: $spacer*4;
+            }
+        }
+    }
+
+    .wp-block-cover.is-style-image-header {
+        min-height: 290px;
+    }
+
+    .entry-meta {
+        font-size: $font-size-lg;
+    }
+
+    .circular-watermark {
+        margin-bottom: $spacer * 4;
+        font-size: $font-size-sm;
+        text-align: right;
+        font-weight: $font-weight-bold;
+        border-bottom: 1px solid $light;
+        padding-bottom: $spacer;
+    }
+
+    .breadcrumb {
+        padding: 0;
+        margin-bottom: $spacer * 4;
+        justify-content: flex-end;
+        font-weight: $font-weight-bold;
+        border-bottom: 1px solid $light;
+    }
+
+    #single-wrapper {
+        margin-top: -5rem;
+        z-index: 1;
+        position: relative;
+    }
+
+    .wp-block-heading {
+        // color: $secondary;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 1.2em;
+            position: relative;
+
+            &:before {
+                content: "";
+                margin-bottom: .2em;
+                display: block;
+                height: 0;
+                width: 0;
+                left: 0;
+                bottom: 0;
+                border: .5em solid $primary;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                position: absolute;
+            }
+        }
+
+    }
+
+    .entry-title {
+        @include media-breakpoint-up(lg) {
+            font-size: $font-size-base * 3;
+        }
+
+    }
+}
+
+.author-firma {
+    margin-top: $spacer * 4;
+    padding-top: $spacer*2;
+    border-top: 1px solid $light;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include media-breakpoint-up(lg) {
+        margin-right: -240px;
+    }
+}
+

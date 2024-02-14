@@ -1,0 +1,36 @@
+@include media-breakpoint-up(md) {
+    .card-body,
+    .card-header,
+    .card-footer {
+        padding: $spacer * 2;
+    }
+}
+
+.card-title {
+    border-bottom: 3px solid;
+    padding-bottom: $headings-margin-bottom;
+    margin-bottom: $headings-margin-bottom*2;
+}
+
+article.circular > .card {
+    background-color: transparent;
+    border: $border-width solid;
+
+    .card-header,
+    .card-footer {
+        background-color: transparent;
+    }
+
+    .card-title {
+        margin-bottom: $headings-margin-bottom/2;
+    }
+
+    .entry-content {
+        margin-top: $spacer;
+        font-size: $font-size-sm;
+    }
+
+    .btn {
+        border-radius: 0;
+    }
+}

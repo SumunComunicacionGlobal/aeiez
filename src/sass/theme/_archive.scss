@@ -1,0 +1,213 @@
+article {
+	position: relative;
+}
+
+.hfeed {
+
+    article {
+        margin-bottom: $spacer * 3;
+
+		.wp-post-image {
+			margin-bottom: $spacer;
+		}
+    }
+}
+
+.post-navigation {
+	margin-top: $spacer * 2;
+
+	.nav-links {
+		font-weight: $font-weight-bold;
+	}
+
+}
+
+#wrapper-description {
+	padding-top: 0;
+}
+
+body {
+
+	&.post-type-archive-ventaja #wrapper-description {
+		background-color: $primary-40 !important;
+		color: $white;
+
+		a {
+			color: $white;
+		}
+	}
+
+	&.post-type-archive-documento #wrapper-description {
+		background-color: $secondary-60 !important;
+		color: $white;
+
+		a {
+			color: $white;
+		}
+	}
+
+	&.post-type-archive-circular #wrapper-description {
+
+	}
+
+	&.post-type-archive-prestador {
+
+		@include media-breakpoint-up(xl) {
+			#archive-wrapper > .container {
+				max-width: 1600px;
+			}
+		}
+	}
+
+}
+
+.hfeed-post:nth-child(odd) > .row {
+	flex-direction: row-reverse;
+}
+
+.hfeed-post.type-prestador {
+
+	.aeiez-meta {
+		max-height: 256px;
+		overflow: hidden;
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 80px;
+			background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+		}
+	}
+}
+
+.hfeed-post {
+
+	.hfeed-post-img-col,
+	.hfeed-post-img-col .h-100 {
+		background-color: $primary;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.wp-post-image {
+			margin-bottom: 0;
+		}
+	}
+
+	&.type-empresa,
+	&.type-ventaja {
+		
+		.hfeed-post-img-col,
+		.hfeed-post-img-col .h-100 {
+			background-color: $white;
+		}
+	}
+}
+
+.carousel-post {
+	height: 450px;
+	display: flex !important;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	.card {
+
+	}
+
+	.entry-title {
+		
+		&:after {
+			content: "";
+			display: block;
+			margin-top: $headings-margin-bottom/2;
+			height: $border-width;
+			width: 80px;
+			background-color: $white;
+		}
+	}
+
+	.carousel-post-meta {
+		margin-bottom: 0;
+		font-size: $font-size-sm;
+
+		&.carousel-post-meta-destacado {
+			font-size: $font-size-base;
+			font-weight: $font-weight-bold;
+		}
+	}
+
+	.card-body-top {
+		height: 250px;
+		overflow-y: auto;
+	}
+
+	.card-body-bottom .entry-content {
+		height: 70px;
+		overflow-y: auto;
+	}
+
+	.pusher {
+		height: 0;
+		transition: $transition-base;
+	}
+
+	&:hover .pusher {
+		height: $spacer;
+	}
+
+	&.carousel-post-circular {
+		
+		.card-footer {
+			border-top: $border-width solid;
+			background-color: transparent;
+		}
+
+		.entry-header {
+			min-height: 180px;
+		}
+
+	}
+
+	&.type-ventaja {
+		
+		.card-body-top {
+			height: 400px;
+		}
+	}
+
+}
+
+.carousel-post-documento {
+	height: 500px;
+
+	.card-img-top,
+	.card-img-top img {
+		height: 200px;
+		object-fit: cover;
+	}
+
+	.entry-meta {
+		position: absolute;
+		top: 2rem;
+		left: 1rem;
+
+		@include media-breakpoint-up(md) {
+			left: 2rem;
+		}
+	}
+
+}
+
+.carousel-post-preview-wrapper {
+
+}
+
+.carousel-post-preview {
+	width: 7rem;
+	padding: 1rem;
+}

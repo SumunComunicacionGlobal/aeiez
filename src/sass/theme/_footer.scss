@@ -1,0 +1,59 @@
+#wrapper-prefooter {
+	border-top: 1px solid $gray-300;
+}
+
+#wrapper-footer-full {
+	background-color: $primary;
+	color: $white;
+	padding-top: 10rem;
+
+	a {
+		color: white;
+	}
+
+	@include media-breakpoint-up(md) {
+		.col-md-6 {
+
+			&:nth-child(odd) {
+				flex: 0 0 33.3333%;
+				max-width: 33.3333%;
+			}
+			&:nth-child(even) {
+				flex: 0 0 66.6666%;
+				max-width: 66.6666%;
+				padding-left: $spacer * 3;
+			}
+		}
+	}
+	
+}
+
+#wrapper-after-footerfull {
+	background-color: $primary-100;
+	color: $white;
+	padding-top: calc($grid-gutter-width + $spacer);
+
+	a {
+		color: white;
+	}
+
+	.wp-block-image {
+		margin: 0 $spacer;
+		max-width: 120px;
+	}
+}
+
+#wrapper-footer {
+	padding: $spacer 0;
+	background-color: $primary-10;
+	color: $primary;
+
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+	}
+
+}
+
+#wrapper-ads {
+	margin-bottom: calc($grid-gutter-width - 11rem);
+}

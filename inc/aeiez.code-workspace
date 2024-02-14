@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../plugins/wp-members"
+		},
+		{
+			"path": "../../../plugins/post-type-archive-descriptions"
+		}
+	],
+	"settings": {}
+}

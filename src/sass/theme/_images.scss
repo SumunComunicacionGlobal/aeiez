@@ -1,0 +1,29 @@
+.bg-cover { 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+.wp-block-image figcaption {
+	font-size: $font-size-sm;
+}
+
+.object-fit-cover,
+img.h-100 {
+	object-fit: cover;
+}
+
+a {
+
+	img, svg {
+		transition: $transition-fade;
+	}
+
+	&:hover {
+		img, svg {
+			opacity: .8;
+		}
+	}
+}

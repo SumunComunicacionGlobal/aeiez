@@ -1,0 +1,402 @@
+body.understrap-no-sidebar {
+
+    .alignwide {
+        margin: 0 calc(50% - 37vw);
+        max-width: 74vw;
+
+        @include media-breakpoint-down(lg) {
+            margin: 0 calc(50% - 50vw);
+            max-width: 100vw;    
+        }
+    }
+}
+
+@media ( max-width: 1920px ) {
+    body.understrap-no-sidebar .wp-block-media-text.alignwide {
+        margin: 0 calc(50% - 50vw);
+        max-width: 100vw;    
+    }
+}
+
+.wp-block-group, 
+.wp-block-cover {
+
+	&.alignfull, 
+    &.alignwide {
+		padding: $spacer * 2 0;
+	}
+}
+
+.wp-block-group.alignfull > .wp-block-group__inner-container {
+    @include make-container();
+    @include make-container-max-widths();
+}
+
+.wp-block-group.has-background {
+    padding: $spacer*2 $spacer;
+
+    @include media-breakpoint-up(md) {
+        padding: $spacer*2 $spacer*2;
+    }
+}
+
+.wp-block-group {
+    background-size: cover;
+
+    &.fondo-formacion,
+    &.fondo-ventajas {
+        position: relative;
+        padding-top: $spacer * 4;
+        padding-bottom: $spacer * 4;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba($white, .75);
+        }
+
+        > .wp-block-group__inner-container {
+            position: relative;
+        }
+    }
+}
+
+.wp-block-buttons {
+    margin-top: $spacer*2;
+    margin-bottom: $spacer*2;
+}
+
+.btn,
+.wp-block-button__link {
+    font-family: $btn-font-family;
+    font-weight: $btn-font-weight;
+    text-transform: uppercase;
+    letter-spacing: $btn-font-size * .1;
+    min-width: 140px;
+}
+
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color), 
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-text-color) {
+    color: $primary;
+}
+
+// .btn[class*=btn-outline-],
+// .wp-block-button.is-style-arrow .wp-block-button__link {
+//     border-radius: 100px;
+//     padding-right: 5rem;
+//     position: relative;
+//     text-align: left;
+
+//     &:after {
+//         content: "";
+//         display: block;
+//         width: 3rem;
+//         height: 3rem;
+//         mask-image: url('../img/flecha-derecha.svg');
+//         mask-repeat: no-repeat;
+//         mask-position: center;
+//         background-color: $primary;
+
+//         position: absolute;
+//         right: 1rem;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         transition: $transition-base;
+
+//     }
+
+//     &:hover:after {
+//         right: .5rem;
+//     }
+
+// }
+
+.btn.btn-icon.text-white,
+.btn[class*=btn-outline-].btn-icon.text-white,
+.wp-block-button.is-style-outline .wp-block-button__link.has-white-color,
+#wrapper-footer-full .wp-block-button.is-style-outline .wp-block-button__link {
+
+    &:after {
+        background-color: $white;
+    }
+}
+
+.wp-block-button__link:not(.has-background) {
+    background-color: $primary;
+}
+
+.btn.btn-icon,
+.wp-block-button.btn-icon > .wp-block-button__link {
+    padding-right: 3rem;
+    position: relative;
+    text-align: left;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        mask-image: url('../img/flecha-derecha.svg');
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: $primary;
+        mask-size: contain;
+        
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: $transition-base;
+    }
+
+    &:hover:after {
+        top: calc(50% - .25rem);
+    }
+
+}
+
+.btn.btn-icon-arrow,
+.wp-block-button.btn-icon-arrow > .wp-block-button__link {
+    padding-right: 4.5rem;
+    border-radius: 100px;
+
+    &:after {
+        mask-image: url('../img/flecha-derecha.svg');
+        width: 3rem;
+    }
+
+    &:hover:after {
+        top: 50%;
+        right: .5rem;
+    }
+}
+
+.btn.btn-icon-corner,
+.wp-block-button.btn-icon-corner > .wp-block-button__link {
+    padding-right: 3rem;
+
+    &:after {
+        mask-image: none;
+        background-color: transparent;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: .625rem solid $primary;
+        border-top-color: transparent;
+        border-left-color: transparent;
+    }
+
+}
+
+.btn.btn-icon-locked,
+.wp-block-button.btn-icon-locked > .wp-block-button__link {
+
+    &:after {
+        mask-image: url('../img/icono-candado.svg');
+    }
+
+}
+
+.btn-icon.btn-outline-secondary {
+    
+    &:after {
+        background-color: $secondary;
+    }
+
+    &:hover:after {
+        background-color: $white;
+    }
+}
+
+.read-more-button-group {
+    gap: $spacer;
+
+    .btn {
+        flex: 0 0 auto;
+    }
+
+    .blocked-text {
+        min-width: 90px;
+        max-width: 200px;
+    }
+}
+
+.wp-block-columns {
+    gap: $grid-gutter-width;
+    margin-bottom: $grid-gutter-width;
+
+    &.is-style-gapless {
+        @include media-breakpoint-up(md) {
+            gap: 0;
+        }
+    }
+}
+
+.redes-sociales {
+	display: flex;
+	width: 100%;
+	align-items: center;
+
+	.red-social {
+		font-size: 2rem;
+		margin-right: 1rem;
+	}
+
+}
+
+.is-style-cifra-circulo {
+    position: relative;
+    @extend .display-1;
+    color: $primary;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 7rem;
+    line-height: 7rem;
+    background-color: $light;
+    // outline: 1rem double $light;
+    text-align: center;
+    // padding: $spacer;
+    margin: $spacer $spacer $spacer * 3;
+    // margin-bottom: $spacer * 3;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: -$spacer;
+        right: -$spacer;
+        top: -$spacer;
+        bottom: -$spacer;
+        border: 8px solid $light;
+        border-radius: 7rem;
+    }
+}
+
+.form-steps {
+
+    .wp-block-column:not(:last-child) .is-style-cifra-circulo {
+
+        &:after {
+
+            @include media-breakpoint-up(md) {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: calc( 100% + $spacer*2 );
+                width: $spacer * .5;
+                border-top: 1px dashed $primary;
+            }
+
+            @include media-breakpoint-up(lg) {
+                width: $spacer * 4;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: $spacer * 8;
+            }
+
+        }
+
+    }
+
+}
+
+.wp-block-cover.is-style-image-header {
+    min-height: 480px;
+    padding-top: 15rem;
+    padding-bottom: 2rem;
+
+    h1,
+    .h1 {
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-base * 3.5;
+            max-width: 900px;
+            line-height: 1;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            margin: $headings-margin-bottom 0;
+            width: 0;
+            height: 0;
+            border: 2rem solid $white;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+    }
+
+    .wp-block-columns {
+        margin-bottom: 0;
+    }
+}
+
+body.single-post .wp-block-cover.is-style-image-header h1 {
+    max-width: unset;
+}
+
+body.has-small-hero .wp-block-cover.is-style-image-header {
+    min-height: 300px;
+
+    h1 {
+        font-size: $h1-font-size;
+    }
+}
+
+.wp-block-latest-posts.wp-block-latest-posts__list {
+
+	li {
+		margin-bottom: $spacer*2;
+		min-height: 3rem;
+		padding-left: 4rem;
+		position: relative;
+
+		&:before {
+			content: "";
+			width: 3rem;
+			height: 3rem;
+			position: absolute;
+			left: 0;
+			top: 0;
+			mask-image: url('../img/chevron-right-circle.svg');
+			mask-repeat: no-repeat;
+			mask-size: contain;
+			mask-position: center;
+			background-color: $primary;
+		}
+	}
+}
+
+.text-white,
+#wrapper-footer-full,
+.has-white-color {
+
+	li:before {
+		background-color: $white;
+	}
+
+}
+
+.wp-block-media-text {
+    margin: $spacer*8 0;
+
+    .wp-block-media-text__content {
+        @include media-breakpoint-down(xs) {
+            padding: $spacer*3 0;
+        }
+    }
+
+    &.is-style-image-mask {
+
+        .wp-block-media-text__media {
+            mask-image: url('../img/mask-image.svg');
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+
+    }
+}
+
